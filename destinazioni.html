@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Infinity Airways </title>
+        <link rel="stylesheet" href="mhw1.css" />
+        <link rel="stylesheet" href="destinazioni.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> <!-- importo il font Raleway da Google Fonts -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="script.js" defer> </script>
+        <script src="contents.js" defer> </script>
+    </head>
+    
+    <body>
+        <header>
+            <nav>
+                <a href="mhw1.html"> Home </a>
+                <a href="chiSiamo.html"> Chi Siamo </a>
+                <a href="infoVoli.html"> Info Voli </a>
+                <a href="acquista.html"> Acquista </a>
+                <a href="areaRiservata.html" class="button"> Area Riservata </a>
+            </nav>
+            <a href="mhw1.html" id="title"> <h1> INFINITY AIRWAYS </h1> </a>
+            <div class="overlay"> </div>   
+        </header>
+
+        <section id="favorites" class="hidden" >
+            <p> Le tue destinazioni preferite </p>
+            <div class="sectionGrid">
+
+            </div>
+        </section>
+
+        <section>
+            <div class="top">
+                <p> Con Infinity Airways puoi raggiungere numerose destinazioni, nazionali e internazionali. Scopri le più popolari!</h1>
+                <input type="text" placeholder="Cerca" id="search" />    
+            </div>
+            <div id="main" class="sectionGrid">
+                <!-- Madrid -->
+                <div data-city ="Madrid" class="sectionGridItem">
+                    <div class="itemTop">
+                        <p class="city"> Madrid </p>
+                        <img class="starPlus" src="https://www.freeiconspng.com/uploads/star-plus-add-favorite-icon-2.jpeg">
+                    </div>
+                    <img src="images/madrid.jpg">
+                    <p class="description"> Clicca qui per più dettagli </p>
+                </div>
+                <!-- Milano -->
+                <div data-city ="Milano" class="sectionGridItem">
+                    <div class="itemTop">
+                        <p class="city"> Milano </p>
+                        <img class="starPlus" src="https://www.freeiconspng.com/uploads/star-plus-add-favorite-icon-2.jpeg">
+                    </div>
+                    <img src="images/milano.jpg">
+                    <p class="description"> Clicca qui  per più dettagli </p>
+                </div>
+                <!-- Londra -->
+                <div data-city ="Londra" class="sectionGridItem">
+                    <div class="itemTop">
+                        <p class="city"> Londra </p>
+                        <img class="starPlus" src="https://www.freeiconspng.com/uploads/star-plus-add-favorite-icon-2.jpeg">
+                    </div>
+                    <img src="images/londra.jpg">
+                    <p class="description"> Clicca qui per più dettagli </p>
+                </div>
+                <!-- Copenaghen -->
+                <div data-city ="Copenaghen" class="sectionGridItem">
+                    <div class="itemTop">
+                        <p class="city"> Copenaghen </p>
+                        <img class="starPlus" src="https://www.freeiconspng.com/uploads/star-plus-add-favorite-icon-2.jpeg">
+                    </div>
+                    <img src="images/copenaghen.jpg">
+                    <p class="description"> Clicca qui per più dettagli </p>
+                </div>
+                <!-- Dublino -->
+                <div data-city ="Dublino" class="sectionGridItem">
+                    <div class="itemTop">
+                        <p class="city"> Dublino </p>
+                        <img class="starPlus" src="https://www.freeiconspng.com/uploads/star-plus-add-favorite-icon-2.jpeg">
+                    </div>
+                    <img src="images/dublino.jpg">
+                    <p class="description"> Clicca qui per più dettagli </p>
+                </div>
+                <!-- Firenze -->
+                <div data-city ="Firenze" class="sectionGridItem">
+                    <div class="itemTop">
+                        <p class="city"> Firenze </p>
+                        <img class="starPlus" src="https://www.freeiconspng.com/uploads/star-plus-add-favorite-icon-2.jpeg">
+                    </div>
+                    <img src="images/firenze.jpg">
+                    <p class="description"> Clicca qui per più dettagli </p>
+                </div>
+                <!-- Parigi -->
+                <div data-city ="Parigi" class="sectionGridItem">
+                    <div class="itemTop">
+                        <p class="city"> Parigi </p>
+                        <img class="starPlus" src="https://www.freeiconspng.com/uploads/star-plus-add-favorite-icon-2.jpeg">
+                    </div>
+                    <img src="images/parigi.jpg">
+                    <p class="description"> Clicca qui per più dettagli </p>
+                </div>
+                <!-- Berlino -->
+                <div data-city ="Berlino" class="sectionGridItem">
+                    <div class="itemTop">
+                        <p class="city"> Berlino </p>
+                        <img class="starPlus" src="https://www.freeiconspng.com/uploads/star-plus-add-favorite-icon-2.jpeg">
+                    </div>
+                    <img src="images/berlino.jpg">
+                    <p class="description"> Clicca qui per più dettagli </p>
+                </div>
+                <!-- Budapest -->
+                <div data-city ="Budapest" class="sectionGridItem">
+                    <div class="itemTop">
+                        <p class="city"> Budapest </p>
+                        <img class="starPlus" src="https://www.freeiconspng.com/uploads/star-plus-add-favorite-icon-2.jpeg">
+                    </div>
+                    <img src="images/budapest.jpg">
+                    <p class="description"> Clicca qui per più dettagli </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apertura footer -->
+        <footer>
+            <div class="footerContent">
+                <!-- Chi siamo? -->
+                <div class="footerItem">
+                    <p> Chi Siamo </p>
+                    <a href="storia.html"> La nostra Storia </a>
+                    <a href="mission.html"> La nostra Mission </a>
+                    <a href="flotta.html"> La nostra Flotta </a>
+                    <a href="recensioni.html"> Dicono di Noi </a>
+                </div>
+                <!-- Dove voliamo? -->
+                <div class="footerItem">
+                    <p> Dove voliamo? </p>
+                    <a href="destinazioni.html"> Destinazioni </a>
+                    <a href="infoVoli.html"> Info Voli </a>
+                    <a href="promozioni.html"> Promozioni </a>
+                    <a href="proposteViaggio.html"> Proposte di Viaggio </a>
+                </div>
+                <!-- Privilege Club -->
+                <div class="footerItem">
+                    <p> Privilege Club </p>
+                    <a href="clubServizi.html"> Servizi </a>
+                    <a href="clubAbbonamenti.html"> Abbonamenti </a>
+                    <a href="clubLounge.html"> Lounge </a>
+                    <a href="clubIscriviti.html"> Iscriviti al Club </a>
+                </div>
+                <!-- Link Utili -->
+                <div class="footerItem">
+                    <p> Link Utili </p>
+                    <a href="checkOnline.html"> Check-in Online </a>
+                    <a href="bagagli.html"> Info Bagagli </a>
+                    <a href="areaRiservata.html"> Area Riservata </a>
+                    <a href="contatti.html"> Contatti </a>
+                </div>
+            </div>
+            <p> Gabriele Vitali 1000010255 </p>
+        </footer> 
+        <!-- Chiusura footer -->    
+    </body>
+</html>

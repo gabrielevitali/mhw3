@@ -1,0 +1,70 @@
+p {
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(6, 20, 61);
+    margin-left: 15px;
+}
+
+#form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    width: 85%;
+    background-color: rgb(6, 20, 61);
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    border-radius: 5px;
+    margin: 20px 0px;
+    padding: 5px;
+}
+
+#flightGrid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: center;
+        background-color: white;
+        min-height: 300px;
+        width: 85%;
+        padding: 20px 0px;
+}
+
+.flightGridHeading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgb(6, 20, 61);
+    border-radius: 5px;
+    margin: 20px;
+    padding: 2px;
+    
+}
+
+.flightGridHeading p {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+}
+
+#from, #to {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: slategrey;
+}
+
+#from img, #to img {
+    height: 15px;
+    width: 15px;
+}
+

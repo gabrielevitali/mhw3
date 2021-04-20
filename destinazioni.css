@@ -1,0 +1,129 @@
+section{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+
+#favorites p {
+    color: rgb(6, 20, 61);
+    line-height: normal;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    margin: 10px 0px;
+}
+
+#favorites .sectionGrid {
+    padding: 0px 0px;
+    min-height: unset;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.top p{
+    color:rgb(6, 20, 61);
+    line-height: normal;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    margin: 0px;
+}
+
+input {
+    margin-left: 15px;
+}
+
+.sectionGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    background-color: white;
+    min-height: 300px;
+    width: 60%;
+    padding: 20px 0px;
+}
+
+.sectionGridItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 5px;
+    margin-bottom: auto;
+}
+
+.itemTop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+
+.itemTop .city {
+    color: rgb(6, 20, 61);
+    line-height: normal;
+    font-style: normal;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    margin: 5px 5px;
+}
+
+.itemTop .starPlus {
+    height: 30px;
+    width: 30px;
+}
+
+.starMinus {
+    max-height: 20px;
+    max-width: 20px;
+    margin-left: 10px;
+}
+
+.sectionGridItem img{
+    height: 200px;
+    width: 250px;
+}
+
+.sectionGridItem p{
+    color:rgb(6, 20, 61);
+    line-height: normal;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    margin: 5px 0px;   
+}
+
+.description {
+    max-width: 250px;
+    align-content: center;
+}
+
+.fixDescription {
+    align-content: center;
+    text-align: justify;
+    font-size: 14px;
+    max-width: 250px;
+    
+}
+
+.hidden {
+    display: none;
+}
