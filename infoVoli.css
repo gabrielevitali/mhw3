@@ -1,4 +1,4 @@
-p {
+.testoBlu {
     font-weight: bold;
     font-size: 20px;
     width: 100%;
@@ -12,7 +12,7 @@ p {
     align-items: center;
     justify-content: space-around;
     height: 50px;
-    width: 85%;
+    width: 90%;
     background-color: rgb(6, 20, 61);
     font-family: 'Raleway', sans-serif;
     font-size: 15px;
@@ -20,7 +20,7 @@ p {
     color: white;
     border-radius: 5px;
     margin: 20px 0px;
-    padding: 5px;
+    padding: 5px 0px;
 }
 
 #flightGrid {
@@ -30,7 +30,7 @@ p {
         align-content: center;
         background-color: white;
         min-height: 300px;
-        width: 85%;
+        /*width: 85%; */
         padding: 20px 0px;
 }
 
@@ -39,11 +39,11 @@ p {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
+    width: 90%;
     background-color: rgb(6, 20, 61);
     border-radius: 5px;
-    margin: 20px;
-    padding: 2px;
+    margin: 30px;
+    padding: 15px 0px;
     
 }
 
@@ -53,6 +53,7 @@ p {
     font-size: 17px;
     font-weight: 500;
     color: white;
+    margin: 0px;
 }
 
 #from, #to {
@@ -60,11 +61,14 @@ p {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: slategrey;
+    background-color: rgb(6, 20, 61);
+    width: 15%;
 }
 
 #from img, #to img {
-    height: 15px;
-    width: 15px;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(6, 20, 61);
+    margin-left: 15px;
 }
 

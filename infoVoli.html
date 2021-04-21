@@ -25,7 +25,7 @@
         </header>
 
         <section>
-            <p> Resta aggiornato sui voli di tuo interesse: seleziona aeroporto di Partenza, aeroporto di Arrivo e una data. </p>
+            <p class="testoBlu"> Resta aggiornato sui voli di tuo interesse: seleziona aeroporto di Partenza, aeroporto di Arrivo e una data. </p>
             <form name="searchFlight" id='form'>
                 <!-- Scelta Aeroporto di Partenza -->
                 <label> Aeroporto di Partenza
@@ -54,26 +54,27 @@
                     </select>
                 </label>
                 <!-- Selezione Data -->
-                <input type="date" name="date">
+                <input type="date" name="date" required>
                 <!-- Bottone per inviare -->
                 <input type="submit" name="search" value="Cerca Volo">
             </form>
             
-            <section id="flightGrid">
-                <div class='flightGridHeading'> 
-                    <p> N. Volo </p>
-                    <div id="from">
-                        <p> Da </p>
-                        <img src="images/partenza.jpg">
-                    </div>
-                    <div id="to">
-                        <p> A </p>
-                        <img src="images/partenza.jpg">
-                    </div>
-                    <p> Partenza </p> 
-                    <p> Arrivo </p> 
-                    <p> Stato </p>
+            <section class='flightGridHeading'> 
+                <p> N. Volo </p>
+                <div id="from">
+                    <p> Da </p>
+                    <img src="https://icons-for-free.com/iconfiles/png/512/flight+flights+plane+icon-1320085756199930884.png">
                 </div>
+                <div id="to">
+                    <p> A </p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR58IK00dIQzPBaBGr7AZAAqVQDszwg7Qo9qdNaccoMzBqu0J32lvheiF63IVLrb9WCQ2E&usqp=CAU">
+                </div>
+                <p> Partenza </p> 
+                <p> Arrivo </p> 
+                <p> Stato </p>
+            </section>
+            
+            <section id="flightGrid">
                 <!-- inizialmente vuota, viene riempita dinamicamente in seguito a richiesta a endpoint di AviationStack-->
             </section>
 
