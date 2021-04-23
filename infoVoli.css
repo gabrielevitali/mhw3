@@ -25,17 +25,17 @@
 
 #flightGrid {
         display: flex;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         justify-content: flex-start;
         align-content: center;
         background-color: white;
         min-height: 300px;
-        /*width: 85%; */
+        width: 100%;
         padding: 20px 0px;
 }
 
 .flightGridHeading {
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -44,15 +44,15 @@
     border-radius: 5px;
     margin: 30px;
     padding: 15px 0px;
-    
 }
 
-.flightGridHeading p {
+.paragraph {
     color: white;
+    text-align: center;
+    align-content: center;
     font-family: 'Raleway', sans-serif;
     font-size: 17px;
     font-weight: 500;
-    color: white;
     margin: 0px;
 }
 
@@ -71,4 +71,3 @@
     background-color: rgb(6, 20, 61);
     margin-left: 15px;
 }
-
