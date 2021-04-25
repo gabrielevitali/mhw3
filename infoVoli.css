@@ -1,3 +1,7 @@
+section {
+    min-height: 400px;
+}
+
 .testoBlu {
     font-weight: bold;
     font-size: 20px;
@@ -23,27 +27,35 @@
     padding: 5px 0px;
 }
 
-#flightGrid {
-        display: flex;
-        /* flex-wrap: wrap; */
-        justify-content: flex-start;
-        align-content: center;
-        background-color: white;
-        min-height: 300px;
-        width: 100%;
-        padding: 20px 0px;
+#flightTable {
+    border-collapse: collapse;
+    width: 90%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(6, 20, 61);
+    margin: 30px 0px;
 }
 
-.flightGridHeading {
+#heading {
     display: none;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 90%;
-    background-color: rgb(6, 20, 61);
-    border-radius: 5px;
-    margin: 30px;
-    padding: 15px 0px;
+}
+  
+td, th {
+    border: 1px solid rgb(6, 20, 61);
+    text-align: center;
+    padding: 12px;
+    vertical-align: middle;
+}
+
+tr {
+    vertical-align: middle;
+}
+  
+tr:nth-child(even) {
+    background-color: rgba(13, 40, 121, 0.856);
+    color: white;
 }
 
 .paragraph {
@@ -57,17 +69,11 @@
 }
 
 #from, #to {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(6, 20, 61);
-    width: 15%;
+    vertical-align: middle;
 }
 
 #from img, #to img {
-    height: 25px;
-    width: 25px;
-    background-color: rgb(6, 20, 61);
+    height: 20px;
+    width: 20px;
     margin-left: 15px;
 }

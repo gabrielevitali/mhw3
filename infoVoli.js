@@ -1,6 +1,7 @@
 const API_KEY = '792898ddad7f8991f83eed9dfaaf9801';
 let dateValueOriginal = undefined; //variabile globale
 let dateValue = undefined; //variabile globale
+//let found = false; //variabile globale (flag)
 
 //const iata = 'CDG';
 //const url = "http://api.aviationstack.com/v1/flights?access_key=" + API_KEY + '&dep_iata=' + iata; 
@@ -60,84 +61,100 @@ function addFlight(doc){
 }
 */
 
-//funzione che riceve un flight e lo aggiunge dinamicamente nella griglia dei voli, inizialmente nascosta
+//funzione che riceve un flight e lo aggiunge dinamicamente nella tabella dei voli, inizialmente nascosta
 function addFlight(doc){
-    const flightGrid = document.querySelector('#flightGrid');
-    console.log('Sono entrato in questa funzione')
-    const flight = document.createElement('div');
-    // const flightGridHeading = document.querySelector('.flightGridHeading').style = 'flex';
-    flight.classList.add('flightGridHeading');
-    flight.style.display = 'flex';
-    flightGrid.appendChild(flight);
+    console.log('La funzione addFlight() è stata chiamata.\n');
 
+    /* Se tale funzione viene chiamata, significa che è stata trovata almeno una corrispondenza,
+       dunque rendo visibile l'intestazione della tabella */
+    const heading = document.querySelector('#heading');
+    heading.style.display = 'table-row';
+
+    const flightTable = document.querySelector('#flightTable');
     
-    //creo p per N. Volo
-    const nVolo = document.createElement('p');
-    flight.classList.add('paragraph');
+    //creo una nuova riga (vuota) e la aggiungo alla tabella
+    const flightRow = document.createElement('tr');
+    flightRow.classList.add('tr');
+    flightTable.appendChild(flightRow);
+
+    //creo cella per N. Volo
+    const nVolo = document.createElement('td');
+    nVolo.classList.add('td');
     nVolo.textContent = doc.flight.number;
-    flight.appendChild(nVolo);
+    flightRow.appendChild(nVolo);
 
-    //creo p per Aeroporto di Partenza
-    const departureAirport = document.createElement('p');
-    flight.classList.add('paragraph');
+    //creo cella per Aeroporto di Partenza
+    const departureAirport = document.createElement('td');
+    departureAirport.classList.add('td');
     departureAirport.textContent = doc.departure.airport + ' ' + doc.departure.iata;
-    flight.appendChild(departureAirport);
+    flightRow.appendChild(departureAirport);
 
-    //creo p per Aeroporto di Arrivo
-    const arrivalAirport = document.createElement('p');
-    flight.classList.add('paragraph');
+    //creo cella per Aeroporto di Arrivo
+    const arrivalAirport = document.createElement('td');
+    arrivalAirport.classList.add('td');
     arrivalAirport.textContent = doc.arrival.airport + ' ' + doc.arrival.iata;
-    flight.appendChild(arrivalAirport);
+    flightRow.appendChild(arrivalAirport);
 
-    //creo p per Data e Orario di Partenza
-    let departureDate = document.createElement('p');
-    flight.classList.add('paragraph');
+    //creo cella per Data e Orario di Partenza
+    const departureDate = document.createElement('td');
+    departureDate.classList.add('td');
     //gestisco data e orario di Partenza
     const depTime = doc.departure.scheduled.substring(11, 16);
     departureDate.textContent = dateValue + ' ' + depTime;
-    flight.appendChild(departureDate);
+    flightRow.appendChild(departureDate);
 
     //creo p per Data e Orario di Arrivo
-    let arrivalDate = document.createElement('p');
-    flight.classList.add('paragraph');
+    const arrivalDate = document.createElement('td');
+    arrivalDate.classList.add('td');
     //gestisco data e orario di Partenza
     const arrTime = doc.arrival.scheduled.substring(11, 16);
     arrivalDate.textContent = dateValue + ' ' + arrTime;
-    flight.appendChild(arrivalDate);
+    flightRow.appendChild(arrivalDate);
 
     //creo p per Stato Volo
-    let status = document.createElement('p');
-    flight.classList.add('paragraph');
+    const status = document.createElement('td');
+    status.classList.add('td');
     status.textContent = doc.flight_status;
-    flight.appendChild(status);
-
+    flightRow.appendChild(status);
+    
     return;
 }
 
 
 //funzione che gestisce il file .json restituito da aviationStack inseguito a richiesta
 function onJson (json){
-    const flightGrid = document.querySelector('#flightGrid');
-    flightGrid.innerHTML = '';
-
+    const rows = document.querySelectorAll('#flightTable tr');
+    for(row of rows){
+        if(row.dataset.type !== 'heading'){
+            row.innerHTML = '';
+        }
+    }
+    
     const num = json.data.length;
-    console.log('Numero di elementi restituiti: ' + num);
+    //console.log('Numero di elementi restituiti: ' + num);
     for(let i=0; i < num; i++){
         doc = json.data[i];
         //console.log('Data: ' + doc.flight_date + '\n');
         if(doc.flight_date === dateValue){
             //console.log('Ho trovato una corrispondenza in data' + dateValue);
+            //found = true; //setto la variabile flag a true
             //aggiungo dinamicamente il volo per cui ho trovato una corrispondenza
             console.log('Numero di volo n.' + i + ': ' + doc.flight.number + '\n');
             console.log(doc.departure.airport + ' ' + doc.departure.iata + '\n');
             console.log(doc.arrival.airport + ' ' + doc.arrival.iata + '\n');
-            console.log(doc.departure.scheduled + '\n'); //gestione data mediante apposita funzione
-            console.log(doc.arrival.scheduled + '\n'); //gestione data mediante apposita funzione
+            console.log(doc.departure.scheduled + '\n');
+            console.log(doc.arrival.scheduled + '\n');
             console.log(doc.flight_status + '\n');
-            addFlight(doc);
+            addFlight(doc); //chiamata alla funzione che gestisce l'inserimento di una nuova riga (volo) in tabella
         }
     }
     console.log(json);
+
+    /*
+    if(found === false){
+        alert('Nessun volo trovato per i parametri di ricerca');
+    }
+    */
 }
 
 function onResponse (response){
@@ -172,9 +189,7 @@ function search(event){
     if(departureValue === arrivalValue){
         alert('Occorre scegliere Aeroporto di Partenza e Aeroporto di Arrivo diversi fra loro');
     }
-    else {
-        document.querySelector('.flightGridHeading').style.display = 'flex'; //rendo visibile la barra
-    }
+    
     /*
     //Se non è stata selezionata una data...
     if(dateValue === ''){
