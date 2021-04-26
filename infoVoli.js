@@ -11,9 +11,6 @@ let dateValueOriginal = undefined; //variabile globale
 let dateValue = undefined; //variabile globale
 let found; //variabile globale (flag)
 
-//const iata = 'CDG';
-//const url = "http://api.aviationstack.com/v1/flights?access_key=" + API_KEY + '&dep_iata=' + iata; 
-//const url = "http://api.aviationstack.com/v1/flights?access_key=" + API_KEY; 
 
 //funzione che riceve un flight e lo aggiunge dinamicamente nella tabella dei voli, inizialmente nascosta
 function addFlight(doc){
@@ -75,17 +72,54 @@ function addFlight(doc){
 }
 
 function onAmadeusJson(json){
-    const num = json.length;
-    console.log(num);
-    /*
-    for(let i=0; i < num; i++0){
-        doc = json.data[i]
+    const num = json.data.length;
+
+    //controllo che la sezione delle attrazioni preferite dai clienti non sia già presente in viewport
+    if(document.querySelector('.attractions') === null){
+        //creo una nuova sezione nella viewport, al di sotto della tabella dei voli
+        const box = document.createElement('div');
+        box.classList.add('attractions');
+        document.querySelector('section').appendChild(box);
+
+        const p = document.createElement('p');
+        p.textContent = 'Alcune delle attrazioni a Londra preferite dai nostri viaggiatori...';
+        p.classList.add('testoBlu');
+        box.appendChild(p);
+
+        const boxContent = document.createElement('div');
+        boxContent.style.display = 'flex';
+        boxContent.style.alignItems = 'center';
+        boxContent.style.justifyContent = 'center';
+        box.appendChild(boxContent);
+        
+        const image1 = document.createElement('img');
+        image1.src = 'https://i1.wp.com/alessandrosicurocomunication.com/wp-content/uploads/2020/10/https___www.history.com_.image_MTYyNDg1MjE3MTI1Mjc5Mzk4_topic-london-gettyimages-760251843-promo.jpg?fit=1920%2C1080&ssl=1';
+        image1.classList.add('attractionsImage');
+        boxContent.appendChild(image1);
+
+        const image2 = document.createElement('img');
+        image2.src = 'https://media.tacdn.com/media/attractions-splice-spp-674x446/09/93/6a/89.jpg';
+        image2.classList.add('attractionsImage');
+        boxContent.appendChild(image2);
+
+        const ul = document.createElement('ul');
+        boxContent.appendChild(ul);
+        
+        for(let i=0; i < num; i++){
+            doc = json.data[i];
+            const li = document.createElement('li');
+            li.textContent = doc.name;
+            li.classList.add('testoBlu');
+            li.style.fontSize = '18px';
+            ul.appendChild(li);
+
+            console.log(doc.name); 
+        } 
     }
-        console.log(doc.name); */
 }
 
 function onAmadeusResponse(response){
-    return response.json;
+    return response.json();
 }
 
 //funzione che gestisce il file .json restituito da aviationStack inseguito a richiesta
@@ -131,8 +165,9 @@ function onJson (json, found){
     }
     else{
             if(found === true){
-                //effettuo richiesta ad Amadeus.com /v1/reference-data/locations/pois
-                fetch('https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.397158&longitude=2.160873', {
+                const params = 'north=51.520180&west=-0.169882&south=51.484703&east=-0.061048';
+                //effettuo richiesta ad Amadeus.com
+                fetch('https://test.api.amadeus.com/v1/reference-data/locations/pois/by-square?' + params, {
                     headers: {
                         'Authorization': 'Bearer ' + token
                     }
